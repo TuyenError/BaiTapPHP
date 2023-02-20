@@ -62,9 +62,8 @@ $users = array(
 if (isset($_POST['btn'])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
+    
     if (isset($users[$username]) && $users[$username] == $password) {
-        session_start();
-        $_SESSION["username"] = $username;
         header("Location: https://tuyenerror.github.io/");
         exit();
     } else {
