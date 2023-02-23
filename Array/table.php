@@ -1,28 +1,19 @@
-<style>
-    table{
-        border: black 1px solid;
-    }
-    tr, td{
-        border: black 1px solid;
-    }
-</style>
+<?php
 
-<?php #Rendering data to table
-
-$account = array(
-    "Timmy" => "1234",
-    "Tuyen" => "5678",
-    "Error" => "9123"
+$data = array(
+    array("Name", "Age", "Gender"),
+    array("John", 30, "Male"),
+    array("Mary", 25, "Female"),
+    array("Tom", 35, "Male")
 );
-
-
-echo "Danh sách các thành viên";
-echo "<table><tr><th>STT</th><th>Username</th><th>Pass</th></tr>";
-$i = 1;
-foreach ($account as $a => $b) {
-    echo "<tr><td>$i</td><td>$a</td><td>$b</td></tr>";
-    $i++;
+echo "Danh sách ";
+echo "<table style='border-collapse: collapse;'>";
+foreach ($data as $row) {
+    echo "<tr style='border: 4px solid black;'>";
+    foreach ($row as $cell) {
+        echo "<td style='border: 5px solid black;'>" . $cell . "</td>";
+    }
+    echo "</tr>";
 }
-;
 echo "</table>";
 ?>

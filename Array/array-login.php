@@ -46,7 +46,7 @@ input[type="submit"]{
 <fieldset>
 <form method="post" action="array-login.php">
   <label for="username">Username:</label>
-  <input type="text" id="username" name="username"><br><br>
+  <input type="text" id="username" name="username" ><br><br>
   <label for="password">Password:</label>
   <input type="password" id="password" name="password"><br><br>
   <input type="submit" value="Login" name="btn">
@@ -62,8 +62,9 @@ $users = array(
 if (isset($_POST['btn'])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    
     if (isset($users[$username]) && $users[$username] == $password) {
+        // session_start();
+        // $_SESSION["username"] = $username;
         header("Location: https://tuyenerror.github.io/");
         exit();
     } else {
