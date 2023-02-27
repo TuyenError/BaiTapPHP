@@ -4,8 +4,8 @@
 </form>
 <?php
 if (isset($_POST['btn'])) {
-	if (isset($_FILES['upload_file'])){
-		$file = $_FILES['upload_file'];
+	if (isset($_FILES['file-upe'])){
+		$file = $_FILES['file-up'];
 		$namefile = $file['file-up'];
 		move_uploaded_file($file['tmp_name'], $namefile);
 		?>
